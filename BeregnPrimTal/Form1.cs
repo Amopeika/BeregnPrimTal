@@ -48,6 +48,7 @@ namespace BeregnPrimTal
             List<int> Primtal = new List<int>();
             for (int i = data.startNumber; i < data.endNumber; i++)
             {
+                ct.ThrowIfCancellationRequested();
                 bool prime = IsPrime(i);
                 if (prime)
                 {
