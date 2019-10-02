@@ -54,14 +54,6 @@ namespace BeregnPrimTal
             //Task with run
             //Task.Run(() => TestPrimeNumbers(param,ct));
 
-            //async and await
-
-            //progress 
-            
-            //cancellation
-
-            //http client
-
         }
 
         void TestPrimeNumbers(object data, CancellationToken ct)
