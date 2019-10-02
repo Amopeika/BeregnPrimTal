@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,7 +35,7 @@ namespace BeregnPrimTal
 
             //async and await
 
-            List<int> result = await Task.Run(() => TestPrimeNumbers(param), ct);
+            List<int> result = await Task.Run(() => TestPrimeNumbers(param,ct), tcs.Token);
             lbPrime.DataSource = result;
 
         }
@@ -44,7 +45,7 @@ namespace BeregnPrimTal
             tcs.Cancel();
         }
 
-        List<int> TestPrimeNumbers(Parameters data)
+        List<int> TestPrimeNumbers(Parameters data, CancellationToken ct)
         {
             List<int> Primtal = new List<int>();
             for (int i = data.startNumber; i < data.endNumber; i++)
