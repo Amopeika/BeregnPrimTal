@@ -19,6 +19,7 @@ namespace BeregnPrimTal
             InitializeComponent();
             txtBegin.Text = "1";
             txtEnd.Text = "1000000";
+            ct = tcs.Token;
         }
 
         private async void btnTest_Click(object sender, EventArgs e)
