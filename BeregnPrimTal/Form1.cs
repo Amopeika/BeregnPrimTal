@@ -12,6 +12,8 @@ namespace BeregnPrimTal
 {
     public partial class Form1 : Form
     {
+        CancellationTokenSource tcs = new CancellationTokenSource();
+        CancellationToken ct;
         public Form1()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace BeregnPrimTal
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            tcs.Cancel();
         }
 
         List<int> TestPrimeNumbers(Parameters data)
