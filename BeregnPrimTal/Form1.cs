@@ -34,7 +34,7 @@ namespace BeregnPrimTal
 
             //async and await
 
-            List<int> result = await Task.Run(() => TestPrimeNumbers(param));
+            List<int> result = await Task.Run(() => TestPrimeNumbers(param), ct);
             lbPrime.DataSource = result;
 
         }
